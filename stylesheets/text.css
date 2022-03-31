@@ -1,0 +1,129 @@
+/*-----------------------------------------------------------------------------
+  テキストの配置
+-----------------------------------------------------------------------------*/
+
+/* 左寄せ指定
+-----------------------------------------------------------------------------*/
+.lefted.text {
+  text-align: left !important;
+}
+
+/* 中央そろえ指定
+-----------------------------------------------------------------------------*/
+.centered.text {
+  text-align: center !important;
+}
+
+/* 右寄せ指定
+-----------------------------------------------------------------------------*/
+.righted.text {
+  text-align: right !important;
+}
+
+/*
+  大きさ指定
+-----------------------------------------------------------------------------*/
+.mini.text {
+  font-size: 0.4rem !important; }
+
+.tiny.text {
+  font-size: 0.5rem !important; }
+
+.small.text {
+  font-size: 0.75rem !important; }
+
+.medium.text {
+  font-size: 1rem !important; }
+
+.large.text {
+  font-size: 1.5rem !important; }
+
+.big.text {
+  font-size: 2rem !important; }
+
+.huge.text {
+  font-size: 4rem !important; }
+
+.massive.text {
+  font-size: 8rem !important; }
+
+/*
+  リードテキスト
+-----------------------------------------------------------------------------*/
+.lead.text {
+  font-size: 1.1rem; }
+
+/* 見出し
+  CSS見出しデザイン参考100選
+  https://jajaaan.co.jp/css/css-headline/
+-----------------------------------------------------------------------------*/
+.title {
+  position: relative;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, .1);
+}
+
+.title::before,
+.title::after {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  content: '';
+  background-image: linear-gradient(135deg, #704308 0%, #ffce08 40%, #e1ce08 60%, #704308 100%);
+}
+
+.title::before {
+  top: 0;
+}
+
+.title::after {
+  bottom: 0;
+}
+
+/* 文字を光りながら出現させるためのCSS
+-----------------------------------------------------------------------------*/
+.glow.text span {
+  opacity: 0;
+}
+
+/* アニメーションで透過度を0から1に変化させ、text-shadowをつける */
+.glow.text.shine span {
+  animation: glow_anime_on 1s ease-out forwards;
+}
+
+@keyframes glow_anime_on {
+    0% { opacity:0; text-shadow: 0 0    0 #fff, 0 0    0 #fff; }
+   50% { opacity:1; text-shadow: 0 0 10px #fff, 0 0 15px #fff; }
+  100% { opacity:1; text-shadow: 0 0    0 #fff, 0 0    0 #fff; }
+}
+
+/*
+  グラデーション
+  CSSでテキストを彩る装飾サンプル集 https://1-notes.com/css-text-design/
+-----------------------------------------------------------------------------*/
+.rainbow.gradation.text {
+  color: transparent;
+  background: repeating-linear-gradient(45deg,
+    #e60012 0.1em 0.2em,
+    #f39800 0.2em 0.3em,
+    #fff100 0.3em 0.4em,
+    #009944 0.4em 0.5em,
+    #0068B7 0.5em 0.6em,
+    #1d2088 0.7em 0.8em,
+    #cfa7cd 0.8em 0.9em);
+  -webkit-background-clip: text;
+  background-clip: text;
+  /* font-weight: bold; */
+  /* letter-spacing: 10px; */
+}
+
+/*
+  文字にグラデーションを付ける方法 https://kouhekikyozou.com/css_text_gradation
+-----------------------------------------------------------------------------*/
+.gold.gradation.text {
+  color: transparent;
+  background: linear-gradient(90deg, #a38131 0%, #e7c76d 33%, #ffe6c5 62%, #e3c05d 83%, #9d874e 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}

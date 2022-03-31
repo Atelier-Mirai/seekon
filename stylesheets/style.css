@@ -1,0 +1,452 @@
+@charset "UTF-8";
+
+/*=============================================================================
+  モバイル版・デスクトップ版 共通
+=============================================================================*/
+
+/*-----------------------------------------------------------------------------
+  基本設定
+-----------------------------------------------------------------------------*/
+* {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/*-----------------------------------------------------------------------------
+  ページ全体の設定
+-----------------------------------------------------------------------------*/
+body {
+  background: rgb(180, 180, 180);
+  background-repeat: no-repeat;
+  color: rgb(50, 50, 50);
+  display: grid;
+  grid-template-columns: 20px 1fr 20px;
+  grid-template-rows:
+                      [head] 100px
+                      [title] auto
+                      [sub] auto
+                      [recent] auto
+                      [foot] 100px;
+  row-gap: 20px;
+  font-family: sans-serif;
+}
+
+/* パーツの配置 */
+body > * {
+  grid-column: 2 / -2;
+}
+
+
+/*-----------------------------------------------------------------------------
+  ヘッダー
+-----------------------------------------------------------------------------*/
+header {
+  grid-row: head;
+  justify-self: center;
+  align-self: center;
+  font-size: 72px;
+  font-style: italic;
+  font-weight: 800;
+  color: rgb(10, 10, 50);
+  font-family: "Special Elite", cursive;
+}
+
+header a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*-----------------------------------------------------------------------------
+  ナビゲーションメニュー
+-----------------------------------------------------------------------------*/
+nav {
+  grid-row: head;
+  align-self: end;
+  font-family: "Caveat", cursive;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0px;
+
+  display: grid;
+  grid-auto-flow: column;
+}
+
+nav a {
+  color: rgb(10, 10, 50);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+nav a:hover {
+  color: rgb(130, 10, 45);
+}
+
+/*-----------------------------------------------------------------------------
+  ヒーローイメージ
+-----------------------------------------------------------------------------*/
+figure.hero {
+  /* 横幅一杯に表示する為に */
+  grid-column: 1 / -1;
+  /* 左右に余白が欲しいならば */
+  /* grid-column: 2 / -2; */
+  grid-row: title / span 2;
+}
+
+figure.hero img {
+  height: 60vh;
+  object-fit: cover;
+  vertical-align: bottom;
+  filter: brightness(70%);
+  /* EDGE用の設定 */
+  z-index: -1;
+  position: relative;
+}
+
+
+/*-----------------------------------------------------------------------------
+  タイトル
+-----------------------------------------------------------------------------*/
+h1 {
+  grid-row: title;
+  justify-self: center;
+  align-self: start;
+  color: rgb(5, 5, 30, 0.7);
+  /* 最小 38px, 標準 10vw, 最大 50px */
+  font-size: clamp(38px, 10vw, 50px);
+  padding-right: 1em; /* 右側に一文字分 余白 */
+
+  font-weight: 600;
+  line-height: 1.1;
+  text-shadow: 0;
+  text-align: start;
+  font-family: 'Special Elite', cursive;
+  text-align: right;
+  /* iPhone閲覧時に、鉄棒と重ならないよう 25vh から変更 */
+  /* mix-blend-mode を使う祭は、干渉するので、コメントアウト */
+  /* margin-top: 18vh; */
+
+  /* 絵と文字が美しく重なります。お好みでどうぞ。 */
+  /* mix-blend-modeの使い方 */
+  /* https://ics.media/entry/7258/ */
+  position: absolute; /* これにより画面内の任意の位置に表示可能にする */
+  mix-blend-mode: overlay; /* オーバーレイを指定 */
+  color: white;
+  top: 240px; /* 上から240px, 右から0px の位置に表示 */
+  right: 0px;
+}
+
+/* .site h1 {
+  grid-row: title;
+  justify-self: start;
+  align-self: start;
+  color: rgb(70, 70, 70);
+  font-size: 30px;
+  font-weight: 100;
+  line-height: 1.1;
+  text-shadow: 0;
+  text-align: start;
+  font-family: "Special Elite", cursive;
+  margin-top: 5vh;
+} */
+
+/* .site02 h1 {
+  grid-row: title;
+  justify-self: start;
+  align-self: start;
+  color: rgb(70, 70, 70);
+  font-size: 30px;
+  font-weight: 100;
+  line-height: 1.1;
+  text-shadow: 0;
+  text-align: start;
+  font-family: 'Special Elite', cursive;
+  margin-top: 5vh;
+} */
+
+/* .site03 h1 {
+  grid-row: title;
+  justify-self: start;
+  align-self: start;
+  color: rgb(70, 70, 70);
+  font-size: 30px;
+  font-weight: 100px;
+  line-height: 1.1;
+  text-shadow: 0;
+  text-align: start;
+  font-family: 'Special Elite', cursive;
+  margin-top: 5vh;
+} */
+
+/* .site04 h1 {
+  grid-row: title;
+  justify-self: start;
+  align-self: start;
+  color: rgb(70, 70, 70);
+  font-size: 30px;
+  font-weight: 100;
+  line-height: 1.1;
+  text-shadow: 0;
+  text-align: start;
+  font-family: 'Special Elite', cursive;
+  margin-top: 5vh;
+} */
+
+
+/*-----------------------------------------------------------------------------
+  特徴一覧
+-----------------------------------------------------------------------------*/
+section {
+  grid-row: recent;
+  display: grid;
+  /* iPhone閲覧時、横三列では小さすぎるので、横一列に変更 */
+  grid-template-columns: 1fr;
+  grid-template-rows: auto repeat(3, 1fr);
+  /* grid-template-rows: auto 1fr 1fr 1fr; と等価 */
+  gap: 10px 10px;
+}
+
+section a {
+  color: rgb(10, 10, 50);
+  text-decoration: none;
+}
+
+section a:hover {
+  color: rgb(130, 10, 45);
+}
+
+section h2 {
+  grid-row: 1;
+  grid-column: 1 / -1;
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  text-align: center;
+}
+
+section h3 {
+  font-size: 20px;
+  font-family: 'Caveat', cursive;
+}
+
+/* 個々の article の配置指定 */
+section article.training { grid-row: 2; grid-column: 1; }
+section article.session  { grid-row: 3; grid-column: 1; }
+section article.tools    { grid-row: 4; grid-column: 1; }
+
+
+/* .top {
+  grid-row: title;
+  justify-self: start;
+  align-self: start;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  font-weight: 15;
+  line-height: 2.1;
+  text-shadow: 0;
+  text-align: start;
+  font-family: "Raleway", serif;
+  margin-top: 5vh;
+} */
+
+/* .site {
+  grid-row: title;
+  justify-self: start;
+  align-self: start;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  font-weight: 15;
+  line-height: 2.1;
+  text-shadow: 0;
+  text-align: start;
+  font-family: "Raleway", serif;
+  margin-top: 5vh;
+} */
+
+/* .site02 {
+  grid-row: title;
+  justify-self: start;
+  align-self: start;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  font-weight: 15;
+  line-height: 2.1;
+  text-shadow: 0;
+  text-align: start;
+  font-family: "Raleway", serif;
+  margin-top: 5vh;
+} */
+
+/* .site03 {
+  grid-row: title;
+  justify-self: start;
+  align-self: start;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  font-weight: 15;
+  line-height: 2.1;
+  text-shadow: 0;
+  text-align: start;
+  font-family: "Raleway", serif;
+  margin-top: 5vh;
+} */
+
+/* .site04 {
+  grid-row: title;
+  justify-self: start;
+  align-self: start;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  font-weight: 15;
+  line-height: 2.1;
+  text-shadow: 0;
+  text-align: start;
+  font-family: "Raleway", serif;
+  margin-top: 5vh;
+} */
+
+
+
+/*-----------------------------------------------------------------------------
+フッター
+-----------------------------------------------------------------------------*/
+footer {
+  grid-row: foot;
+  justify-self: center;
+  align-self: center;
+  font-size: 14px;
+  font-family: "Special Elite", cursive;
+}
+
+body::after {
+  content: "";
+  background-color: rgb(100, 100, 100);
+  grid-column: 1 / -1;
+  grid-row: foot;
+  z-index: -1;
+}
+
+/*-----------------------------------------------------------------------------
+「お問い合わせ」ページ
+-----------------------------------------------------------------------------*/
+form p {
+  margin-bottom: 20px;
+}
+
+input, textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+textarea {
+  height: 120px;
+}
+
+input[type="submit"] {
+  background-color: rgb(130, 10, 45);
+  border: none;
+}
+
+.map {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.map .inner {
+  overflow: hidden;
+  position: relative;
+  /* iphoneでは縦長の地図にします */
+  padding-top: 150%;
+}
+
+@media (min-width: 768px) {
+  .map .inner {
+    /* 縦横比を16対9の横長にします */
+    padding-top: calc(100% * 9 / 16);
+  }
+}
+
+.map .inner iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+}
+
+/*=============================================================================
+  PC版の設定
+=============================================================================*/
+/* 一般的なブレークポイントは、480px 768px 960px 1280px など */
+/* ブレークポイントを一つ設定するなら、768pxが一般的でしょう */
+/* @media (min-width: 1024px) { */
+@media (min-width: 768px) {
+  /* PC版：ページ全体の設定 */
+  body {
+    grid-template-columns: 0.2fr repeat(6, 1fr) 0.2fr;
+    column-gap: 5%;
+    grid-template-rows:
+                        [head] 100px
+                        [title sub] auto
+                        [recent] auto
+                        [foot] 100px;
+  }
+
+  /* PC版：ヘッダー */
+  header {
+    justify-self: start;
+    align-self: end;
+  }
+
+  /* PC版：ナビゲーションメニュー */
+  nav {
+    justify-self: end;
+    align-self: center;
+  }
+
+  nav ul {
+    gap: 15px;
+  }
+
+
+  /* PC版：ヒーローイメージ */
+  figure.hero {
+    grid-row: title;
+    margin-top: -20px;
+  }
+
+  /* PC版：タイトル */
+  h1 {
+    width: 80%;
+    max-width: 460px;
+
+    /* mix-blend-mode 使用時は、以下の設定は無効 */
+    grid-column: 3 / span 6;
+    align-self: center;
+  }
+
+  /* PC版：特徴一覧 */
+  section {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto 1fr;
+    column-gap: 20px;
+  }
+
+  /* 個々の article の配置指定 */
+  section article.training { grid-row: 2; grid-column: 1; }
+  section article.session  { grid-row: 2; grid-column: 2; }
+  section article.tools    { grid-row: 2; grid-column: 3; }
+
+  /* PC版：「お問い合わせ」ページ */
+  input[type="submit"] {
+    width: 250px;
+  }
+}

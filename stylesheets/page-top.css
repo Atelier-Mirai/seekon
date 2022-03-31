@@ -1,0 +1,51 @@
+/* 戻るボタンを右下に固定*/
+#page-top {
+  position: fixed;
+  right:   10px;
+  bottom:  10px;
+  z-index: 2000;
+  /*はじめは非表示*/
+  opacity: 0;
+  transform: translateY(100px);
+}
+
+#page-top span {
+  display: block;
+  padding: 15px 0 0 2px;
+  transition: all 0.3s;
+}
+
+#page-top span:hover {
+  font-size: larger;
+  padding: 7px 0 0 2px;
+}
+
+/* 上に上がる動き */
+#page-top.upward {
+  animation: upward-animation 0.5s forwards;
+}
+@keyframes upward-animation {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 0.8;
+    transform: translateY(-15px);
+  }
+}
+
+/* 下に下がる動き */
+#page-top.downward {
+  animation: downward-animation 0.5s forwards;
+}
+@keyframes downward-animation {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(100px);
+  }
+}
