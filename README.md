@@ -86,10 +86,14 @@ $(".inline").modaal({
 「$」は、jQuery の関数です。htmlから、「.inline」と、inline クラス名が付けられた要素を抽出し、modaal メソッドを実行することで、「.inline」要素が、モーダル動作をするようになります。
 
 aタグの id属性はtraining, class名はinlineにします。
-<a href="#training" class="inline">
 
-すると、<a href="#training"> がクリックされたときに、<div id="training"> が表示されます。
-<div id="training" class="hidden"> と、「hidden」クラスを付与しておくことで、クリックされていないときには、表示されないようにできます。
+```
+<a href="#training" class="inline">
+```
+
+すると、```<a href="#training">``` がクリックされたときに、```<div id="training">``` が表示されます。
+
+また、```<div id="training" class="hidden">```のように「hidden」クラスを付与しておくことで、クリックされていないときには、表示されないようにできます。
 
 .hidden の css は、stylesheets/utility.css に、次のように書いています。
 ```
@@ -110,7 +114,7 @@ JavaScriptは、利用者の操作に応じてウェブサイトに動きを与�
 ある特定のリンクがクリックされたときに、表示される位置を変更する（先頭に戻るボタンの例）です。
 ある特定の写真をクリックしたときに、それを大きく表示する（写真ギャラリー Magnific Popupの例）です。
 
-html では、リンクであることを示す為に、<a href="#training" class="inline gold button"><h3>TRAINING QUALITY</h3></a>と書きます。
+html では、リンクであることを示す為に、```<a href="#training" class="inline gold button"><h3>TRAINING QUALITY</h3></a>```と書きます。
 そして、飾り付けを行う為に、「gold button」クラスを付与します。
 
 実際にどのような飾り付けを行うかは、cssで記述します。
@@ -118,15 +122,12 @@ html では、リンクであることを示す為に、<a href="#training" clas
 .gold.button { 金色のボタンの形に彩る } となっています。
 このように、<a>タグ はたくさんあるので、飾り付けを行いたいタグには、クラス名を付けて、
 飾り付けの内容は、それぞれのクラス名に応じて、css でいろいろ記述するのが一般的です。
-クラス名は、自分自身で分かりやすい名前を付けることが出来ますので、
-<a class="kiniro-no-botan"> のようにしたり、
-<a class="sentou-ni-modoru-botan"> というようにすることも出来ます。
+クラス名は、自分自身で分かりやすい名前を付けることが出来ますので、```<a class="kiniro-no-botan">``` のようにしたり、```<a class="sentou-ni-modoru-botan">``` というようにすることも出来ます。
 
-JavaScript は、
-ある特定のリンクがクリックされたときに、表示される位置を変更する（先頭に戻るボタンの例）などのように使います。
-このとき、html の要素には、<a class="inline"></a> や、<p id="page-top"></p>のように、クラス名やID属性を付与しておき、JavaScriptのプログラムコードには、「inline」クラスがクリックされたときにはこういう処理をするであったり、「page-top」がクリックされたときには、こういう処理をするようにプログラムを書いていきます。
+JavaScript は、ある特定のリンクがクリックされたときに、表示される位置を変更する（先頭に戻るボタンの例）などのように使います。
+このとき、html の要素には、```<a class="inline"></a>``` や、```<p id="page-top"></p>```のように、クラス名やID属性を付与しておき、JavaScriptのプログラムコードには、「inline」クラスがクリックされたときにはこういう処理をするであったり、「page-top」がクリックされたときには、こういう処理をするようにプログラムを書いていきます。
 また、直接プログラムを書くと長くなりますし、他のウェブサイトを作るときにも使い回し出来るよう、別のファイルにプログラムコードを書いておき、実際に使うhtml内に読み込んで使う方法が普通です。
-先頭に戻るプログラムの例でしたら、bodyタグの最後に、<script src="javascripts/page-top.js"></script> と書き、javascriptsディレクトリ内にある、「page-top.js」というファイルを読み込んで使っています。
+先頭に戻るプログラムの例でしたら、bodyタグの最後に、```<script src="javascripts/page-top.js"></script>``` と書き、javascriptsディレクトリ内にある、「page-top.js」というファイルを読み込んで使っています。
 
 css ファイルについて
 -----------------------------------------------------------------------------
@@ -174,16 +175,20 @@ iPhoneでウェブサイトを見る人が大半ですので、
 </html>
 ```
 
-ですので、トップページの完成後、それをコピーして、下層ページを作っていくと、共通する<head>や<header><nav>などをそのまま使えるので作成が楽でしょう。
+ですので、トップページの完成後、それをコピーして、下層ページを作っていくと、共通する```<head>```や```<header>``` ```<nav>```などをそのまま使えるので作成が楽でしょう。
 
 また、css では、
+```
 .top h1 { トップページ用の装飾いろいろ }
 .site h1 { 下層ページ用の装飾いろいろ }
+```
 のように、クラス名を付けて記述していくとそれぞれのページにスタイルを提供することが出来ます。
 
 トップページと、下層ページ共通に適用させたい場合には、
+```
 header { 装飾いろいろ }
 footer { 装飾いろいろ }
+```
 とクラス名を付けずに記述します。
 
 さらに、静的サイトジェネレータである「middleman」（ミドルマン）などを用いると、
@@ -195,8 +200,16 @@ Fomantic UI について
 ボタンやテーブル、フォームなどのデザインを一から行っていくのはなかなか手間暇かかるものです。
 そういったときに先人達が作成してくれたCSSを用いるのは、
 労力も節約でき、手軽に洗練されたデザインを適用することが出来るので、お薦めです。
+様々なフレームワークがありますが、自然な英語の感覚で記述できる Fomantic UI は人気のフレームワークです。
 
 [ボタンの例](https://fomantic-ui.com/elements/button.html)
-<button class="ui red button">Red</button> と書くことで、赤いボタンを作成できます。
+
+```
+<button class="ui red button">Red</button>
+```
+と書くことで、赤いボタンを作成できます。
 
 [表の例](https://fomantic-ui.com/collections/table.html)
+[フォームの例](https://fomantic-ui.com/collections/form.html)
+
+など、豊富な事例がありますので、参考になさってください。
