@@ -19,7 +19,7 @@ img {
 /*-----------------------------------------------------------------------------
   ページ全体の設定
 -----------------------------------------------------------------------------*/
-body {
+body.top {
   background: rgb(180, 180, 180);
   background-repeat: no-repeat;
   color: rgb(50, 50, 50);
@@ -36,10 +36,9 @@ body {
 }
 
 /* パーツの配置 */
-body > * {
+body.top > * {
   grid-column: 2 / -2;
 }
-
 
 /*-----------------------------------------------------------------------------
   ヘッダー
@@ -53,6 +52,7 @@ header {
   font-weight: 800;
   color: rgb(10, 10, 50);
   font-family: "Special Elite", cursive;
+  line-height: 1;
 }
 
 header a {
@@ -92,7 +92,7 @@ nav a:hover {
 /*-----------------------------------------------------------------------------
   ヒーローイメージ
 -----------------------------------------------------------------------------*/
-figure.hero {
+.top figure.hero {
   /* 横幅一杯に表示する為に */
   grid-column: 1 / -1;
   /* 左右に余白が欲しいならば */
@@ -100,7 +100,7 @@ figure.hero {
   grid-row: title / span 2;
 }
 
-figure.hero img {
+.top figure.hero img {
   height: 60vh;
   object-fit: cover;
   vertical-align: bottom;
@@ -114,7 +114,7 @@ figure.hero img {
 /*-----------------------------------------------------------------------------
   タイトル
 -----------------------------------------------------------------------------*/
-h1 {
+.top h1 {
   grid-row: title;
   justify-self: center;
   align-self: start;
@@ -203,7 +203,7 @@ h1 {
 /*-----------------------------------------------------------------------------
   特徴一覧
 -----------------------------------------------------------------------------*/
-section {
+.top section {
   grid-row: recent;
   display: grid;
   /* iPhone閲覧時、横三列では小さすぎるので、横一列に変更 */
@@ -213,16 +213,16 @@ section {
   gap: 10px 10px;
 }
 
-section a {
+.top section a {
   color: rgb(10, 10, 50);
   text-decoration: none;
 }
 
-section a:hover {
+.top section a:hover {
   color: rgb(130, 10, 45);
 }
 
-section h2 {
+.top section h2 {
   grid-row: 1;
   grid-column: 1 / -1;
   font-family: 'Raleway', sans-serif;
@@ -231,15 +231,15 @@ section h2 {
   text-align: center;
 }
 
-section h3 {
+.top section h3 {
   font-size: 20px;
   font-family: 'Caveat', cursive;
 }
 
 /* 個々の article の配置指定 */
-section article.training { grid-row: 2; grid-column: 1; }
-section article.session  { grid-row: 3; grid-column: 1; }
-section article.tools    { grid-row: 4; grid-column: 1; }
+.top section article.training { grid-row: 2; grid-column: 1; }
+.top section article.session  { grid-row: 3; grid-column: 1; }
+.top section article.tools    { grid-row: 4; grid-column: 1; }
 
 
 /* .top {
@@ -315,7 +315,7 @@ section article.tools    { grid-row: 4; grid-column: 1; }
 
 
 /*-----------------------------------------------------------------------------
-フッター
+  フッター
 -----------------------------------------------------------------------------*/
 footer {
   grid-row: foot;
@@ -333,55 +333,6 @@ body::after {
   z-index: -1;
 }
 
-/*-----------------------------------------------------------------------------
-「お問い合わせ」ページ
------------------------------------------------------------------------------*/
-form p {
-  margin-bottom: 20px;
-}
-
-input, textarea {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 10px;
-}
-
-textarea {
-  height: 120px;
-}
-
-input[type="submit"] {
-  background-color: rgb(130, 10, 45);
-  border: none;
-}
-
-.map {
-  box-sizing: border-box;
-  width: 100%;
-}
-
-.map .inner {
-  overflow: hidden;
-  position: relative;
-  /* iphoneでは縦長の地図にします */
-  padding-top: 150%;
-}
-
-@media (min-width: 768px) {
-  .map .inner {
-    /* 縦横比を16対9の横長にします */
-    padding-top: calc(100% * 9 / 16);
-  }
-}
-
-.map .inner iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 50%;
-}
-
 /*=============================================================================
   PC版の設定
 =============================================================================*/
@@ -390,14 +341,14 @@ input[type="submit"] {
 /* @media (min-width: 1024px) { */
 @media (min-width: 768px) {
   /* PC版：ページ全体の設定 */
-  body {
+  body.top {
     grid-template-columns: 0.2fr repeat(6, 1fr) 0.2fr;
-    column-gap: 5%;
     grid-template-rows:
                         [head] 100px
                         [title sub] auto
                         [recent] auto
                         [foot] 100px;
+    column-gap: 5%;
   }
 
   /* PC版：ヘッダー */
@@ -416,15 +367,14 @@ input[type="submit"] {
     gap: 15px;
   }
 
-
   /* PC版：ヒーローイメージ */
-  figure.hero {
+  .top figure.hero {
     grid-row: title;
     margin-top: -20px;
   }
 
   /* PC版：タイトル */
-  h1 {
+  .top h1 {
     width: 80%;
     max-width: 460px;
 
@@ -434,19 +384,14 @@ input[type="submit"] {
   }
 
   /* PC版：特徴一覧 */
-  section {
+  .top section {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto 1fr;
     column-gap: 20px;
   }
 
   /* 個々の article の配置指定 */
-  section article.training { grid-row: 2; grid-column: 1; }
-  section article.session  { grid-row: 2; grid-column: 2; }
-  section article.tools    { grid-row: 2; grid-column: 3; }
-
-  /* PC版：「お問い合わせ」ページ */
-  input[type="submit"] {
-    width: 250px;
-  }
+  .top section article.training { grid-row: 2; grid-column: 1; }
+  .top section article.session  { grid-row: 2; grid-column: 2; }
+  .top section article.tools    { grid-row: 2; grid-column: 3; }
 }

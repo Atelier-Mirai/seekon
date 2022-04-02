@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width">
 
     <!-- ページのタイトル -->
-    <title>PLAN - SEEK.on</title>
+    <title>LOCATION - SEEK.on</title>
 
     <!-- ファビコン / アップルタッチアイコンの指定 -->
     <!-- https://ao-system.net/favicongenerator/ で作成できます。-->
@@ -61,81 +61,30 @@
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     </nav>
 
-    <main class="two article">
-      <!--
-        index.html では、h1 と ヒーローイメージは、sectionの外側にありましたが、
-        section に 見出しも欲しいので、内側に移動させています。
-        そして、aside は、補足説明のためのタグでしたが、
-        主題、メインディッシュとなるコンテンツ（内容物・出し物）のためには、
-        「main」というタグが用意されていますので、
-        「index.html」で登場した「section」に代えて、
-        「main」タグを使用してみましょう。
-
-        また、中にあるarticle の数によってレイアウトを変更できるよう、
-        クラスを設定しています。
-      -->
-
-      <!--
-        class="mb-0" は、stylesheets/utility.css の中で定義されている隙間調整用のクラスです。
-        h1 { margin-bottom: 0; } と書くのと同じですが、ちょっとした隙間を調整する祭に便利です。
-      -->
-      <h1 class="mb-0">PLAN</h1>
+    <main class="one article">
+      <h1 class="mb-0">LOCATION</h1>
 
       <!-- アイキャッチ(≒ヒーローイメージ) -->
       <figure class="eyecatch">
-        <img src="images/road.webp" alt="ロード">
+        <img src="images/sunokomai03.webp" alt="簀子舞内装">
       </figure>
 
       <article>
-        <!-- 見出しを装飾してみました。お好みでどうぞ。 -->
-        <h2 class="silver title"><span>料金表</span></h2>
+        <h2 class="silver title"><span>パーソナルトレーニングジム<br><ruby>簀子舞<rt>すのこまい</rt></ruby></span></h2>
 
-        <!--
-          料金表は、table タグを使うと良いかと思います。
-          位置揃えも楽ですし、項目が増えた場合にも柔軟に対応できます。
-          自分でデザインしても良いですが、
-          Fomantic UI の紹介も兼ねて、作ってみました。
-          標準ですと、table の背景色は白ですが、
-          <table class="ui striped black compact table" style="background: transparent;">
-          のように、直接スタイルを指定することで、
-          背景色を透明にも出来ます。
-          お好みでどうぞ
-        -->
-        <table class="ui striped black compact table">
-          <thead>
-            <tr>
-              <!-- th は表の項目名に使うタグ -->
-              <th class="center aligned">メニュー</th>
-              <th class="center aligned">料金</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="left aligned">カウンセリング60分</td>
-              <td class="right aligned">無料</td>
-            </tr>
-            <!-- 見易さの為に横一列に書くこともあります -->
-            <tr><td class="left aligned">トレーニング60分 ×  4回</td><td class="right aligned">¥ 48,400(税込)</td></tr>
-            <tr><td class="left aligned">トレーニング60分 ×  8回</td><td class="right aligned">¥ 96,800(税込)</td></tr>
-            <tr><td class="left aligned">トレーニング60分 × 16回</td><td class="right aligned">¥193,600(税込)</td></tr>
-            <tr><td class="left aligned">トレーニング60分 × 24回</td><td class="right aligned">¥290,400(税込)</td></tr>
-            <tr><td class="left aligned">トレーニング60分 × 32回</td><td class="right aligned">¥387,200(税込)</td></tr>
-          </tbody>
-        </table>
-      </article>
+        <p>
+          所在地: 名古屋市中区錦2丁目9-6 明和丸の内ビル4階
+        </p>
+        <p>
+          丸の内駅6番出口より徒歩5分、伏見駅1番出口より徒歩3分と、交通至便の地にあります。お気軽にお立ち寄りください。
+        </p>
 
-      <article>
-        <h2 class="silver title"><span>トレーニングについて</span></h2>
-        <p>
-          トレーニングは長期で実施すればその分だけ身体への恩恵も大きくなり、可逆的な作用も少なく済みます。
-          また、 短期での過剰な落ち幅を目指したダイエットはデメリットも多いことから当ジムでは長期契約をおすすめしております。
-        </p>
-        <p>
-          「なるべく多回数の契約をしてください」ということではなく、同じ8回のセッションでも運動習慣の有無や 運動歴によってその使い道は違うため、あなたにあった契約を一緒見つけていきましょう。
-        </p>
-        <p>
-          押し売りや過度なサプリメント販売は一切致しませんのでご安心ください。
-        </p>
+        <div class="map">
+          <div class="inner">
+            <!-- iframe　タグで　google mapを埋め込みます -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.423561374645!2d136.89606351509678!3d35.17099428031648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6003771442f86b23%3A0xb4a5a1321d0cc59d!2z44OR44O844K944OK44Or44OI44Os44O844OL44Oz44Kw44K444Og57CA5a2Q6Iie!5e0!3m2!1sja!2sjp!4v1644933538499!5m2!1sja!2sjp"style="border:0;"></iframe>
+          </div>
+        </div>
       </article>
     </main>
 

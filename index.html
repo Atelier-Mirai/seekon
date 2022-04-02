@@ -10,7 +10,7 @@
     <!-- ページのタイトル -->
     <title>SEEK.on</title>
 
-    <!-- ファビコンの指定 -->
+    <!-- ファビコン / アップルタッチアイコンの指定 -->
     <!-- https://ao-system.net/favicongenerator/ で作成できます。-->
     <link rel="icon" href="images/favicon.ico" type="image/ico">
     <link rel="apple-touch-icon" href="images/apple-touch-icon-180x180.png" type="image/png" sizes="180x180">
@@ -28,6 +28,9 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
+    <!-- Fomantic UI -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.css">
+
     <!-- Modaal -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/css/modaal.min.css">
 
@@ -36,6 +39,9 @@
     <link rel="stylesheet" href="stylesheets/button.css">
     <link rel="stylesheet" href="stylesheets/text.css">
     <link rel="stylesheet" href="stylesheets/page-top.css">
+    <link rel="stylesheet" href="stylesheets/contact.css">
+    <link rel="stylesheet" href="stylesheets/map.css">
+    <link rel="stylesheet" href="stylesheets/site.css">
     <link rel="stylesheet" href="stylesheets/style.css">
   </head>
 
@@ -48,7 +54,10 @@
       <ul>
         <li><a href="trainer.html"><i class="fa-solid fa-award fa-fg fa-fw"></i>TRAINER</a></li>
         <li><a href="plan.html"><i class="fa-solid fa-seedling fa-lg fa-fw"></i>PLAN</a></li>
-        <li><a href="locations.html"><i class="fa-solid fa-street-view fa-lg fa-fw"></i>LOCATION</a></li>
+        <!-- 単数形が良いと思いますので、
+             locations.html から location.html に
+             LOCATIONS から LOCATION に修正しています。-->
+        <li><a href="location.html"><i class="fa-solid fa-street-view fa-lg fa-fw"></i>LOCATION</a></li>
         <li><a href="contact.html"><i class="fa-solid fa-envelope fa-lg fa-fw"></i>CONTACT</a></li>
       </ul>
       <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -67,7 +76,7 @@
 
     <section>
       <!-- 特徴紹介 -->
-      <h2 class="title">FEATURE DESCRIPTION</h2>
+      <h2 class="gold title">FEATURE DESCRIPTION</h2>
 
       <!-- トレーニングクオリティ -->
       <!-- CSSで配置制御しやすくする為にクラス名を付与 -->
@@ -149,18 +158,19 @@
         <a href="#" class="circular button">
           <span>
             <i class="fa-solid fa-angles-up fa-lg"></i>
-            <!-- <span class="computer only">Page Top</span> -->
           </span>
         </a>
       </p>
       <span class="gold gradation text">© SEEK.on</span>
     </footer>
 
-    <!--後でコードを確認する！！！ -->
     <!-- HTML要素を操作できるように JavaScript は 一番最後に書きます -->
-
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Fomantic UI -->
+    <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.js"></script>
+
     <!-- Modaal -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/js/modaal.min.js"></script>
     <script src="javascripts/modaal-custom.js"></script>

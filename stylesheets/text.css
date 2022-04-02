@@ -53,18 +53,18 @@
 .lead.text {
   font-size: 1.1rem; }
 
-/* 見出し
+/* 上下に金色の線の見出し
   CSS見出しデザイン参考100選
   https://jajaaan.co.jp/css/css-headline/
 -----------------------------------------------------------------------------*/
-.title {
+.gold.title {
   position: relative;
   padding: 1rem 1.5rem;
   box-shadow: 0 2px 14px rgba(0, 0, 0, .1);
 }
 
-.title::before,
-.title::after {
+.gold.title::before,
+.gold.title::after {
   position: absolute;
   left: 0;
   width: 100%;
@@ -73,13 +73,50 @@
   background-image: linear-gradient(135deg, #704308 0%, #ffce08 40%, #e1ce08 60%, #704308 100%);
 }
 
-.title::before {
+.gold.title::before {
   top: 0;
 }
 
-.title::after {
+.gold.title::after {
   bottom: 0;
 }
+
+/* 横に黒色の線の見出し
+  CSSのコピペだけ！おしゃれな見出しのデザイン例まとめ68選
+  https://saruwakakun.com/html-css/reference/h-design
+-----------------------------------------------------------------------------*/
+.silver.title {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 1rem; }
+  .silver.title span {
+    color: #0d0d0d;
+    background-image: linear-gradient(-45deg, #333 0%, #868888 20%, #d8dcdc 34%, white 53%, #666 100%);
+    text-shadow: 0 0 7px #fff, 0 0 7px #fff, 0 0 7px #fff, 0 0 7px #fff, 0 0 7px #fff, 0 0 7px #fff, 0 0 7px #fff, 0 0 7px #fff;
+    font-family: "Caveat", cursive;
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 1.5;
+    display: inline-block;
+    width: calc(100% - 40px); }
+@media (min-width: 768px) {
+  .sliver.title span {
+    width: 400px; }
+  .silver.title::before,
+  .silver.title::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    width: calc((100% - 440px) / 2);
+    max-width: 440px;
+    height: 3px;
+  }
+  .silver.title::before {
+    left: 0; }
+  .silver.title::after {
+    right: 0; } }
 
 /* 文字を光りながら出現させるためのCSS
 -----------------------------------------------------------------------------*/

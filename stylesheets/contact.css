@@ -1,0 +1,40 @@
+/*-----------------------------------------------------------------------------
+「お問い合わせ」ページ
+-----------------------------------------------------------------------------*/
+form p {
+  margin-bottom: 20px;
+}
+
+input,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.gender {
+  display: grid;
+  grid-template-columns: repeat(2, 30px 50px);
+  grid-template-rows: auto;
+}
+.gender input[type="radio"] { height: 20px; }
+
+textarea {
+  height: 120px;
+}
+
+input[type="submit"] {
+  background-color: rgb(130, 10, 45);
+  color: white;
+  border: none;
+}
+
+/*=============================================================================
+  PC版の設定
+=============================================================================*/
+@media (min-width: 768px) {
+  /* PC版：「お問い合わせ」ページ */
+  input[type="submit"] {
+    width: 250px;
+  }
+}

@@ -1,103 +1,226 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <meta charset="UTF-8">
-    <title>CONTACT - SEEK.on</title>
+    <!-- 文字コードの指定 -->
+    <meta charset="utf-8">
+
+    <!-- ビューポート -->
     <meta name="viewport" content="width=device-width">
+
+    <!-- ページのタイトル -->
+    <title>CONTACT - SEEK.on</title>
+
+    <!-- ファビコン / アップルタッチアイコンの指定 -->
+    <!-- https://ao-system.net/favicongenerator/ で作成できます。-->
+    <link rel="icon" href="images/favicon.ico" type="image/ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon-180x180.png" type="image/png" sizes="180x180">
+
+    <!-- 検索時に表示されるWEBサイトの要約文 -->
+    <meta name="description" content="概ね80文字前後のサイトの紹介文が、検索時に表示されます。">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <!-- Fomantic UI -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.css">
+
+    <!-- Modaal -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/css/modaal.min.css">
+
+    <!-- 自分で作ったスタイルシート -->
+    <link rel="stylesheet" href="stylesheets/utility.css">
+    <link rel="stylesheet" href="stylesheets/button.css">
+    <link rel="stylesheet" href="stylesheets/text.css">
+    <link rel="stylesheet" href="stylesheets/page-top.css">
+    <link rel="stylesheet" href="stylesheets/contact.css">
+    <link rel="stylesheet" href="stylesheets/map.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/site.css">
   </head>
-  <body class="site04">
-    <header>SEEK.on</header>
+
+  <body class="site">
+    <!-- ロゴ -->
+    <!-- クリックした祭にトップページに移動するよう、リンクを設定 -->
+    <header class="gold gradation text"><a href="index.html">SEEK.on</a></header>
+    <!-- ナビゲーションメニュー -->
     <nav>
       <ul>
-        <li>
-        <a href="index.html">TOP</a>
-        <li>
-        <a href="trainer.html">TRAINER</a>
-        <li>
-        <a href="plan.html">PLAN</a>
-        <li>
-        <a href="locations.html">LOCATIONS</a>
-        <li>
-        <a href="contact.html">CONTACT</a>
+        <li><a href="trainer.html"><i class="fa-solid fa-award fa-fg fa-fw"></i>TRAINER</a></li>
+        <li><a href="plan.html"><i class="fa-solid fa-seedling fa-lg fa-fw"></i>PLAN</a></li>
+        <li><a href="location.html"><i class="fa-solid fa-street-view fa-lg fa-fw"></i>LOCATION</a></li>
+        <li><a href="contact.html"><i class="fa-solid fa-envelope fa-lg fa-fw"></i>CONTACT</a></li>
       </ul>
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap" rel="stylesheet">
     </nav>
-    <article>
-      <h1>CONTACT</h1>
-      <form action="/success" method="post" name="contact" netlify-honeypot="bot-field" data-netlify="true">
-        <input type="hidden" name="form-name" value="contact">
-        <label class="hidden" for="subject">件名</label>
-        <input type="hidden" id="subject" name="subject" value="WEBサイトからお問い合わせがありました。">
-        <label class="hidden" for="referrer_url">問い合わせ前に見ていたURL</label>
-        <input type="hidden" id="referrer_url" name="referrer_url" value="">
-        <script>
-        document.getElementById("referrer_url").value = document.referrer;
-      </script>
-        <p>
-          <label>名前：
-            <input type="text" name="name" placeholder="佐藤太郎" required>
-          </label>
-        </p>
-        <p>
-          <label>性別：
-            <select name="gender">
-              <option>男性</option>
-              <option>女性</option>
-            </select>
-          </label>
-        </p>
-        <p>
-          <label>メールアドレス又はLINE ID：
-            <input type="email" autocomplete="email" class="input" id="email" name="email" placeholder="taro@example.com" required="required">
-          </label>
-        </p>
-        <p>
-          <label>電話番号：
-            <input type="phone" placeholder="ハイフンは除いて入力してください" required>
-          </label>
-        </p>
-        <p>
-          <label>年齢：
-            <select name="age">
-              <option>16～19歳</option>
-              <option>20～29歳</option>
-              <option>30～39歳</option>
-              <option>40～49歳</option>
-              <option>50～59歳</option>
-              <option>60～69歳</option>
-              <option>70歳以上</option>
-            </select>
-          </label>
-        </p>
-        <p>
-          <label>カウンセリング希望日時：
-            <input type="date" placeholder="" required>
-          </label>
-        </p>
-        <p>
-          <label>コメント：
-            <textarea name="coment"placeholder="疑問点やトレーニング目的等、ご自由にご記入ください。" required></textarea>
-          </label>
-        </p>
-        <p>
-          <input type="submit" value="送信">
-        </p>
-      </form>
-    </article>
-    <aside class="">
-      <p>　</p>
-      <p>　</p>
-      <figure>
-        <img src="images/silhouette.png" alt="ご挨拶">
+
+    <main class="one article">
+
+      <h1 class="mb-0">CONTACT</h1>
+
+      <!-- アイキャッチ(≒ヒーローイメージ) -->
+      <!--
+        絵がないと寂しいので、入れて見ました。
+        また、ファイル名に空白や & マークなどの記号を使うと
+        諸々の不具合の原因となりやすいので、避けたほうが無難です
+      -->
+      <figure class="eyecatch">
+        <img src="images/balance_ball_and_mat.webp" alt="バランスボール">
       </figure>
-      <p></p>
+
+      <article>
+        <!--
+          Netlify を利用している場合、
+          action="/success" と書くと、送信ボタンを押した後に、success.htmlが表示されます。
+          success.html に「お問い合わせを受け付けました」旨、記しておくと、
+          送信ボタンを押したことが、閲覧者に伝わるので、安心感を与えることが出来ます。
+        -->
+
+        <!-- 綺麗なフォームをデザインすることはなかなか大変です。 -->
+        <!-- Fomantic UI https://fomantic-ui.com/collections/form.html -->
+        <!-- いろいろなフォームの作成例もありますので、利用してみるのも一考です。 -->
+
+        <form action="/success" method="post" name="contact" data-netlify="true">
+          <!-- 隠しフィールド -->
+          <!-- Netlifyからのメール通知に使われます -->
+          <input type="hidden" name="form-name" value="contact">
+          <label class="hidden" for="subject">件名</label>
+          <input type="hidden" id="subject" name="subject" value="WEBサイトからお問い合わせがありました。">
+          <label class="hidden" for="referrer_url">問い合わせ前に見ていたURL</label>
+          <input type="hidden" id="referrer_url" name="referrer_url" value="">
+          <script>document.getElementById("referrer_url").value = document.referrer;</script>
+
+
+          <p>
+            <!--
+              label と input の書き方には、二種類あります。
+              一つは、
+              <label>
+                <input>
+              </label>
+              のように、labelタグの内側に、inputを配置する方法です。
+
+              もう一つは、
+              <label for="ooo"></label>
+              <input id="ooo">
+              のように、for と id で対応付ける書き方です。
+              この書き方は、自由度が高いので好まれます。
+            -->
+
+            <!--
+              autocomplete="name" と書くことで、iPhoneに登録した自分の名前が自動で入力できるようになるので、利用者に快適に使ってもらえます。
+            -->
+            <label for="name">お名前</label>
+            <input type="text" autocomplete="name" id="name" name="name" placeholder="佐藤 太郎" required="required">
+          </p>
+
+          <!--
+            性別のように、数が少ないものに関しては、
+            セレクトボックスで選ばせるよりも
+            ラジオボタンで選ばせたほうが、
+            一覧性や操作性が良いことから好まれます。
+          -->
+          <p class="gender">
+            <!-- <div> -->
+              <input type="radio" id="male" name="gender" value="male">
+              <label for="male">男性</label>
+            <!-- </div> -->
+            <!-- <div> -->
+              <input type="radio" id="female" name="gender" value="female">
+              <label for="female">女性</label>
+            <!-- </div> -->
+          </p>
+          <!-- <p>
+            <label>性別：
+              <select name="gender">
+                <option>男性</option>
+                <option>女性</option>
+              </select>
+            </label>
+          </p> -->
+
+          <p>
+            <label for="email">メールアドレス又はLINE ID：</label>
+            <input type="email" autocomplete="email" class="input" id="email" name="email" placeholder="taro@example.com" required="required">
+          </p>
+
+          <p>
+            <label for="tel">電話番号：</label>
+            <input type="tel" autocomplete="tel" id="tel" maxlength="11" minlength="7" name="tel" pattern="^(\d|-|\(|\))*$" placeholder="ハイフンは省略可能です" required="required">
+            <!-- <input type="phone" placeholder="ハイフンは除いて入力してください" required> -->
+          </p>
+
+          <p>
+            <label for="age">年齢：</label>
+            <select name="age" id="age">
+              <option value="teens">16～19歳</option>
+              <option value="20th">20～29歳</option>
+              <option value="30th">30～39歳</option>
+              <option value="40th">40～49歳</option>
+              <option value="50th">50～59歳</option>
+              <option value="60th">60～69歳</option>
+              <option value="70th">70歳以上</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="date">カウンセリング希望日時：</label>
+            <input type="date" id="date" required="required">
+          </p>
+
+          <p>
+            <label for="comment">コメント：</comment>
+            <textarea id="comment" name="comment" placeholder="疑問点やトレーニング目的等、ご自由にご記入ください。" required="required"></textarea>
+          </p>
+
+          <p>
+            <input type="submit" value="送信">
+          </p>
+        </form>
+      </article>
+    </main>
+
+    <aside>
+      <figure>
+        <img src="images/silhouette.webp" alt="トレーニングイメージ">
+      </figure>
     </aside>
-    <footer>©SEEK.on</footer>
+
+    <!-- フッター -->
+    <footer>
+      <p id="page-top">
+        <!-- 金色のボタン -->
+        <a href="#" class="circular button">
+          <span>
+            <i class="fa-solid fa-angles-up fa-lg"></i>
+          </span>
+        </a>
+      </p>
+      <span class="gold gradation text">© SEEK.on</span>
+    </footer>
+
+    <!-- HTML要素を操作できるように JavaScript は 一番最後に書きます -->
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Fomantic UI -->
+    <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.js"></script>
+
+    <!-- Modaal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/js/modaal.min.js"></script>
+    <script src="javascripts/modaal-custom.js"></script>
+
+    <!-- page top -->
+    <script src="javascripts/page-top.js"></script>
+
+    <!-- glow text-->
+    <script src="javascripts/glow-text.js"></script>
   </body>
 </html>
